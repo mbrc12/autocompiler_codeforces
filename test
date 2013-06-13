@@ -7,8 +7,16 @@ rm *.out
 echo "Please enter the name of the round and the name of the problem (example: 314 E)";
 read round
 read problem
+echo "Please enter language (cpp/pas/java)"
+read lang
 
-g++ -std=c++11 $problem.cpp
+if [[ $lang=="cpp" ]]; then
+   g++ -std=c++11 $problem.cpp
+fi
+if [[ $lang=="pas" ]]; then
+   fpc $problem.pas
+   mv $problem a.out
+fi
 
 wget http://codeforces.com/contest/$round/problem/$problem
 
