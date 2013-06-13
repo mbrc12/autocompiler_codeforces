@@ -10,10 +10,10 @@ read problem
 echo "Please enter language (cpp/pas/java)"
 read lang
 
-if [[ $lang=="cpp" ]]; then
+if [[ $lang="cpp" ]]; then
    g++ -std=c++11 $problem.cpp
 fi
-if [[ $lang=="pas" ]]; then
+if [[ $lang="pas" ]]; then
    fpc $problem.pas
    mv $problem a.out
 fi
